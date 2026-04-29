@@ -1,0 +1,40 @@
+========================================
+AWS S3 (Static Website Hosting)
+========================================
+
+1. Login to AWS account (root user)
+2. Create a public S3 bucket (refer previous steps)
+
+3. Create 3 HTML files on your computer:
+   - index.html
+   - page1.html
+   - page2.html
+
+4. Go to AWS and open your bucket
+5. Click Upload
+6. Click Add Files and select all 3 HTML files
+7. Click Upload
+
+8. After upload, select all files in bucket
+9. Click Actions → Make public using ACL
+10. Confirm to make files public
+
+11. Go to Properties tab of the bucket
+12. Scroll down to "Static website hosting"
+13. Click Edit
+14. Enable Static website hosting
+
+15. In index document, enter:
+    index.html
+
+16. Click Save Changes
+
+17. Scroll down again to Static website hosting section
+18. Copy the website endpoint link
+
+19. Paste link in browser and press Enter
+20. Website will open (index.html page)
+
+21. Use links in page to navigate:
+    - Go to page1.html
+    - Go to page2.html

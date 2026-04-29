@@ -1,0 +1,76 @@
+========================================
+AWS EC2 Elastic IP (Static IP)
+========================================
+
+1. Login to AWS Console
+2. Create an EC2 instance
+
+----------------------------------------
+Check IP Change
+----------------------------------------
+
+3. Go to Instances
+4. Select your instance
+
+5. Stop instance:
+   Instance State → Stop
+
+6. Wait a few seconds
+
+7. Start instance:
+   Instance State → Start
+
+8. Copy new Public IPv4 address
+
+9. Compare old and new IP
+   → IP will be different
+
+----------------------------------------
+Create Elastic IP (Static IP)
+----------------------------------------
+
+10. Go to "Network & Security"
+11. Click "Elastic IPs"
+
+12. Click "Allocate Elastic IP address"
+13. Click "Allocate"
+
+14. Click on the new Elastic IP
+
+15. Click "Associate Elastic IP address"
+16. Select your EC2 instance
+
+17. Keep default Private IP
+18. (Optional) Enable reassociation
+
+19. Click "Associate"
+
+20. Go back to Instances
+21. Check Public IP
+   → Now same as Elastic IP (static)
+
+----------------------------------------
+Verify
+----------------------------------------
+
+22. Stop and Start instance again
+23. Check IP
+   → IP will NOT change
+
+----------------------------------------
+Delete Elastic IP
+----------------------------------------
+
+24. Go to Elastic IPs
+25. Select Elastic IP
+
+26. Click Actions → Disassociate
+27. Confirm
+
+28. Click Actions → Release Elastic IP
+29. Confirm
+
+30. Go back to EC2 instance
+   → Public IP will change again
+
+31. (Optional) Terminate instance

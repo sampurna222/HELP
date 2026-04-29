@@ -1,0 +1,24 @@
+========================================
+AWS S3 (Nginx)
+========================================
+
+hosting website on ec2
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install nginx 
+
+1.	Log in to the AWS Management Console.
+2.	Open the EC2 service and launch a new instance.
+3.	Give a name and select an instance type such as t3.micro.
+4.	Create or select a key pair and save it securely.
+5.	Configure the network and create or select a security group.
+6.	Allow inbound traffic for SSH on port 22 and HTTP on port 80
+8.	Wait for the instance to reach the running state and note its public IPv4 address.
+9.	Connect to the EC2 instance using SSH.
+10.	Update the operating system packages.
+11.	Install a web server such as Ngnix
+12.	Start the web server and configure it to run automatically on startup.
+13.	Set appropriate permissions for the web server directory
+pload your website files to the web server root directory.
+15.	Verify the web server is running properly
+16.	Open a web browser and access the website using the EC2 public IP address.
+17.	Optionally configure a domain name to point to the EC2 instance

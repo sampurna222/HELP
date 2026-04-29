@@ -1,0 +1,24 @@
+Problem Statement:
+Deploy a project from GitHub to EC2 by creating a new security group and user data.
+
+Procedure:
+
+1.Log in to the Amazon Web Services (AWS) Management Console and open Amazon EC2.
+2.In the EC2 dashboard, click on "Instances" and then click "Launch Instance".
+3.Enter the instance name and choose the required AMI (Ubuntu).
+4.Scroll to the Security Group section and create a new security group.
+5.Add inbound rules:
+6.SSH (Port 22)
+7.HTTP (Port 80)
+8.Custom TCP (Port 4000) for the Node.js application
+9.After creating the security group, review its details to confirm the rules are added.
+10.Scroll down to the Advanced Details section and locate the "User Data" field.
+11.Paste the deployment script that installs Nginx, Git, Node.js and clones the GitHub repository.
+12.Review the configuration in the Summary panel and ensure the number of instances is set to 1.
+13.Click "Launch Instance" to create the EC2 instance.
+14.After launching, go to "Instances" and check that the instance status is "Running".
+15.Open the instance details and copy the Public IPv4 address.
+16.Wait a few minutes for the user data script to finish installing dependencies and deploying the project.
+17.Open a browser and access the application using:
+http://Public-IP:4000
+18.The deployed Node.js application will appear in the browser.

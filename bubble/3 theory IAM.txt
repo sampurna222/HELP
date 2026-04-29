@@ -1,0 +1,30 @@
+1.	Sign in to your console (as root user). 
+2.	On the top side of the page go to the Search bar and type “IAM”. 
+3.	Click on the first result showing “IAM”. 
+4.	We are then redirected to the Identity and Access Management (IAM) dashboard. We then have to select the user option in the left side panel under Access Management.
+5.	Next click on Create Users button in the Users page 
+6.	After that you have to create a user and specify the details.
+ a. Specify the name of the user 
+b. Check the “Provide user access to the AWS Management Console” box 
+c. Select the option “I want to create an IAM user”. 
+d. Select custom password and enter it. 
+e. Uncheck the “Users must create a new password at next sign-in” box.
+ f. Then click on next 
+7.	Now under Permissions Options, select Add user to Group option
+8.	Under User Groups click on Create Group button.
+9.	A pop-up will appear where you have to specify the new group name and edit the policies/permissions associated with it 
+a. Enter the User Group Name 
+b. Next in the find policies search bar type S3 as we have to give permission only for S3. 
+c. Select the first two options 
+d. Then click on Create User Group 
+10.	 Now the pop-up closes and under the User Groups section our newly created group is visible in a table format. Select the group. 
+11.	 Then click on Next.
+12.	After that we can return to users list and see that our new user has been added to the users’ table. 
+13.	Now we logout of our console
+14.	Next, we again try to login to the console. But now we select IAM user login.
+15.	Here we have to enter Account ID of the root user. We can get that in the drop-down menu after logging in our root user account. Alternatively, we can use the link in our downloaded .csv file or our email which if used in our browser will redirect use to the login page with the Account ID already entered! 
+16.	Enter the credentials.
+17.	Next you can type S3 in the search box
+18.	Here we get to Create Bucket. Hence we have full access of S3.
+19.	Thus, we have successfully created an IAM user and given it only S3 access.
+20.	Now, we can logout.

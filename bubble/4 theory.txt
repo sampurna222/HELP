@@ -1,0 +1,22 @@
+1.	Sign in to your AWS account as root user.
+2.	Now in the homepage search for S3 in the search box and then select the first option displayed.
+3.	After clicking on it, you will be redirected to the Amazon S3 homepage. There we have to click on the create bucket button on the right hand side.
+4.	Next you will go to the Create bucket screen where you have to configure your bucket before creating it. 
+a. Choose a globally unique name for your bucket. It should NOT contain any spaces or any uppercase letters. 
+b. Select the AWS Region as Asia Pacific (Mumbai) ap-south-1. Remember you can avail other options but each server region has different pricing associated with it. Since, we are living in India, we are choosing the one closest to us to remain fairly priced. 
+c. Next we go to Object Ownership section where we keep ACLs disabled option checked (as it is). 
+d. Next, we keep all public access blocked (as it is). 
+e. Everything else remains unchanged.
+f. Now click on the Create bucket button.
+After that we are redirected to the buckets page where we can see all our buckets   in a table format
+6.	 Now we click on our newly selected bucket (on the name).
+7.	Now we have successfully entered into our newly created bucket.
+8.	Click the Upload button to upload a file in our bucket.
+9.	After clicking you will be redirected to the Upload page. Click on Add files button to add a file.
+10.	You will open a pop up to browse from your pc to upload a file. After selection click on upload button.
+11.	You will then be redirected to the upload status page where a status bar will be present showing the progress of your upload
+12.	Close your status page. Now in the bucket page you will see the file you have uploaded in the objects section.
+13.	Next click on the Actions button as shown above
+14.	Select the “Share with presigned URL” option.
+15.	Now a pop-up will appear as shown below. You have to specify the duration for which the link remains active. Next click on Create presigned URL. Note that after creation the URL link automatically gets copied ( in your clipboard). So you do not have to manually copy it. Just right click and paste it in another browser( Or use Ctrl+V shortcut in the browser search box)After pasting the 
+16.	link in the bar, press Enter key. Now we can access our file using the presigned URL for limited time

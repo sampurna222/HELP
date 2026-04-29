@@ -1,0 +1,25 @@
+1.	Sign in to your AWS account as root user.
+2.	Now in the homepage search for S3 in the search box and then select the first option displayed.
+3.	After clicking on it, you will be redirected to the Amazon S3 homepage. There we have to click on the create bucket button on the right-hand side.
+4.	Next you will go to the Create bucket screen where you have to configure your bucket before creating it. 
+a. Choose a globally unique name for your bucket. It should NOT contain any spaces or any uppercase letters. 
+b. Select the AWS Region as Asia Pacific (Mumbai) ap-south-1. Remember you can avail other options but each server region has different pricing associated with it. Since, we are living in India, we are choosing the one closest to us to remain fairly priced. 
+c. Next, we go to Object Ownership section where we keep ACLs enabled option checked. We also keep “Bucket owner preferred” option checked in the object ownership choice 
+d. Next, we UNCHECK the Block all public access option. 
+e. Remember to check the “I acknowledge that the current settings might result in this bucket and the objects within becoming public” option just below
+f. Everything else remains unchanged.
+g. Now click on the Create bucket button.
+5.	After that we are redirected to the buckets page where we can see all our buckets in a table format
+6.	Now we click on our newly selected bucket (on the name).
+7.	Now we have successfully entered into our newly created bucket.
+8.	Click the Upload button to upload a file in our bucket.
+9.	After clicking you will be redirected to the Upload page. Click on Add files button to add a file.
+10.	You will be shown a box to browse from your pc to upload a file. After selection click on upload button
+11.	You will then be redirected to the upload status page where a status bar will be present showing the progress of your upload. 
+12.	Close your status page. Now in the bucket page you will see the file you have uploaded in the objects section.
+13.	Now click on the file
+14.	And go to the Actions section.And choose option ‘Make public using ACL’.
+15.	Make the file public.
+16.	Now, again copy the object URL and paste it in a different browser.
+17.	After pasting the link in the bar, press Enter key. Now we can access our file using the object URL directly.
+18.	So, our file is public and can be accessed by those with the object URL(link) anytime anywhere. The URL is working perfectly as intended

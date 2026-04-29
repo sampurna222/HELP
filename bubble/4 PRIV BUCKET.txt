@@ -1,0 +1,19 @@
+
+1. Log in to your AWS account (as root user).
+2. Search for **Amazon S3** in the search bar.
+3. Click **Create Bucket**.
+4. Enter a **unique bucket name** (no spaces, no capital letters).
+5. Choose region: **Asia Pacific (Mumbai) – ap-south-1**.
+6. Keep all default settings (no changes needed).
+7. Click **Create Bucket**.
+8. Click on your bucket name.
+9. Click **Upload**.
+10. Click **Add Files** and choose a file from your computer.
+11. Click **Upload** to upload the file.
+12. After upload, you will see the file in the bucket.
+13. Select the file.
+14. Click **Actions → Share with presigned URL**.
+15. Set time limit and click **Create URL**.
+16. Paste the link in browser → file will open.
+
+

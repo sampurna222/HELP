@@ -1,0 +1,52 @@
+========================================
+AWS Lambda (Serverless Computing)
+========================================
+
+1. Login to AWS Console
+2. Search for Lambda
+3. Open Lambda service
+
+4. Click "Create Function"
+5. Select "Author from scratch"
+
+6. Enter function name
+7. Select Runtime: Node.js
+8. Keep default settings
+also add the url and architecture
+
+9. Click "Create Function"
+
+----------------------------------------
+Edit and Test Function
+----------------------------------------
+
+10. Scroll to Code section
+11. Modify the code (change output text)
+
+12. Click File → Save
+
+13. Click "Test"
+14. Select "Create new event"
+15. Enter event name
+16. Click Save
+
+17. Click "Deploy"
+18. Wait for success message
+
+----------------------------------------
+Create Function URL
+----------------------------------------
+
+19. Go to Configuration tab
+20. Click "Function URL"
+
+21. Click "Create Function URL"
+22. Set Auth Type: NONE
+23. Click Save
+
+24. Copy Function URL
+25. Paste in browser → output will display
+
+----------------------------------------
+Delete Lambda Function
+---------------------------

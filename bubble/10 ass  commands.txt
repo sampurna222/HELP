@@ -1,0 +1,25 @@
+use the same security group as 9 and make a instance
+with advanced settings
+#!/bin/bash
+
+sudo apt-get update -y
+
+sudo apt-get install -y nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+sudo apt-get install -y git curl
+
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+git clone https://github.com/celestial201/Aws_test.git
+
+cd Aws_test
+
+npm install
+
+node index.js
+
+copy the public ip with 4000
+ 

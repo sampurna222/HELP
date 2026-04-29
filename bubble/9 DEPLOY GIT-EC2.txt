@@ -1,0 +1,106 @@
+========================================
+GitHub to AWS EC2 Deployment (Node.js Project)
+========================================
+
+1. Login to GitHub account
+2. Login to AWS account
+3. Create EC2 instance (refer previous steps)
+
+4. Connect to EC2 using Bitvise SSH
+5. Open Terminal
+
+----------------------------------------
+Setup Server
+----------------------------------------
+
+6. Update system:
+   sudo apt-get update
+   sudo apt-get upgrade
+
+7. Install Nginx:
+   sudo apt-get install nginx
+
+8. Check Nginx version:
+   nginx -v
+
+9. Install Node.js:
+   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash
+   sudo apt install nodejs
+
+10. Check Node version:
+    node -v
+
+----------------------------------------
+Clone GitHub Repository
+----------------------------------------
+
+11. Go to GitHub repository
+12. Click Code → Copy HTTPS URL
+
+13. In terminal:
+    git clone <your-repo-url>
+
+14. Enter GitHub username
+15. Enter GitHub Personal Access Token (instead of password)
+
+16. List files:
+    ls
+
+17. Go inside project folder:
+    cd <repo-name>
+
+18. View files:
+    ls -A
+
+----------------------------------------
+Install Project Dependencies
+----------------------------------------
+
+19. Install packages:
+    npm install
+
+----------------------------------------
+Open Port (Important)
+----------------------------------------
+
+20. Go to EC2 → Security Groups
+21. Click Edit Inbound Rules
+22. Click Add Rule
+
+23. Set:
+    Type: Custom TCP
+    Port: 4000   (or your app port)
+    Source: 0.0.0.0/0
+
+24. Click Save Rules
+
+----------------------------------------
+Run Project
+----------------------------------------
+
+25. Start server:
+    node index.js
+
+26. Copy EC2 Public IP
+
+27. Open browser:
+    http://<Public-IP>:4000
+
+28. Website will load
+
+----------------------------------------
+Update Project (Git Pull)
+----------------------------------------
+
+29. Edit code in GitHub and Commit changes
+
+30. Stop server:
+    Ctrl + C
+
+31. Pull latest code:
+    git pull
+
+32. Restart server:
+    node index.js
+
+33. Refresh browser → changes visible

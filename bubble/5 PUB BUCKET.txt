@@ -1,0 +1,29 @@
+AWS S3 (Make File Public – Steps)
+
+1. Login to AWS account
+2. Search for Amazon S3
+3. Click on Create Bucket
+4. Enter a unique bucket name (no spaces, no capital letters)
+5. Select region: Asia Pacific (Mumbai) – ap-south-1
+
+6. In settings:
+   - Enable ACLs
+   - Select "Bucket owner preferred"
+   - Uncheck "Block all public access"
+   - Tick the warning checkbox
+
+7. Click Create Bucket
+
+8. Open your bucket
+9. Click Upload
+10. Click Add Files and select a file
+11. Click Upload
+12. File will appear in bucket
+
+13. Click on the file
+14. Go to Actions → Make public using ACL
+15. Confirm to make file public
+
+16. Copy the Object URL
+17. Paste in browser and press Enter
+18. File will open publicly

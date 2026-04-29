@@ -1,0 +1,212 @@
+Assignment 11
+Problem Statement: Build Scaling plans in AWS that balance load on efficient EC2 instances.
+Procedure:
+1. Sign-in to GitHub. Make sure the Repository which will be cloned is made public or not.
+a. For This, select the “settings” tab of your repository.
+b. Next Scroll Down until you reach the danger-zone section.
+ 
+c. In here, check The Change Repository visibility option. Here, we can see the repository is currently Public. If it shows Private then click on the Change Visibility option and follow the on-screen Instructions to make the repository Public.
+2. Now in another tab open AWS and Sign-in to your console.
+3. Now go to your EC2 dashboard.
+4. From the Left Side Nav-bar Go to your Instances Section. Under it Click the launch templates button.
+ 5. Now click on the Create Launch Templates button.
+ 
+6. Now, give a name and description for your EC2 template you are about to create. Here we gave the same for both the fields. Next, Check the “Provide Guidance” box.
+ 
+7. Next, under the quick start menu select Ubuntu as the OS. 
+8. Under Instance type select t2. micro type of configuration.
+ 
+9. Select Existing Key-Pair and Security Group and if not applicable then Generate or Create a Key-Pair or Security Group wherever required 
+10. Now, Click on the Advanced Group Section at the bottom. Scroll Down to User Data Section and paste the following commands in the provided box.
+ 
+After adding the commands, it will look like this………
+11. Now click on the Create Launch Template button.
+12. Now from the Left side Nav Bar go to Auto Scaling Groups under Auto-Scaling section.
+13. Now click on Create Auto Scaling Group.
+14. Now, Give a unique name to your new Auto Scaling Group. Also select the Launch Template that we recently created by using the drop-down menu under Launch Templates section.
+ 
+15. Under the selected Launch Template click on the version option and select Latest.
+16. Now click on the Next button.
+17. After that, Under Availability Zones and Subnets select all the zones that appear.
+ 
+18. Again, click on the Next button.
+19. Now Under Load Balancers select the Attach to a New Load balancer option.
+20. Now select Internet-Facing under Load balancer scheme.
+21. Under Listeners and Routing enter the port no. of the project and select Create target group followed by giving the target group a name.
+22. Now click on the next button.
+23. After clicking on the Next button, a new page will open. Under Group Size mention:
+ a) Desired Capacity = 2
+b) Minimum Capacity = 2 
+c) Maximum Capacity = 3
+24. Now under Scaling policies Choose the Target Tracking Scaling policy option.
+Select the metric type as Average CPU utilization.Set Target Value to 50.Set Warm-Up time to 300 seconds under Instances Need.
+25. Then click on next.
+26. Nothing to do in Notifications page. So again, click on the Next button.
+27. No tags needed. Again, click on the Next button.
+28. Now Review your Auto-Scaling Group you are going to create. Now click on the Create Auto-Scaling Group button.
+29. Now we can go to the Auto Scaling Groups section and find our newly created Auto Scaling Group.
+ 
+30. Return to the Instances Page using the Left side Nav bar.
+31. Click on the First instance. Copy its public IPV4 DNS.
+ 
+32. Paste it in another browser.
+We can successfully access the webpage
+ 
+33. Now to access our project webpage we need to append the port no. (4000) of our project with a “:”
+34. To test our Auto-Scaling Group actually works we need to crash or overload the existing instance servers.
+Then only our Auto-Scaling Group will provide fresh instance servers automatically in case of crash; or it can provide extra servers to handle overloads.
+35. We will now CRASH THE SERVER INSTANCES by terminating them.
+36. Go to the instances page. Select the server instances.
+37. Now click on the Instance State button up top. From the drop-down select the Terminate instance option.
+38. Refresh the instances the page from time to time. After few seconds the instances will get terminated.
+39. Wait for some time. Keep refreshing using the refresh button on the left side of Instance state button. 
+40. After some you will notice a new instance server will appear automatically! To help finding it more easily we need to activate the instance running filter. Click on the search box below the Instances Section Heading. 
+Start typing running.
+ 
+Select the option “Instance state = running option in the suggestion dropdown. The filter will be activated. You can alternatively type the command directly in the search-box directly. Now, only the running instances will be shown in the list.
+41. After some few seconds of refreshing we will be able to see two new servers are running.
+ Now again copy paste the new public IPv4 DNS of the first instance and port no. in the other browser to see if the instances are working. It will be working.So, our Auto-Scaling Group can handle instance crashing by providing new fresh instances.
+42. We will now OVERLOAD THE SERVER INSTANCES by running scripts and increasing CPU utilization value above the threshold that we specified during Configuration of the Auto scaling group.
+43. For it we will use:
+a) Use Bitvise SSH client for instance 1.
+b) Use direct connect terminal in AWS for instance 2.
+44. For Instance-1:
+a) Copy the public IPv4 address
+b) Open Bitvise SSH client.
+c) Paste the IP and select/specify the necessary options. (Refer Ass7)
+d) Now Log-In to your server.
+e) Open the new Terminal.
+f) Now enter the command:  nano infil.sh
+g) After the command a new nano Editor window will open. Type the following in it.
+#!/bin/bash
+while true
+do 
+       echo “Loop running”
+done
+h) Now, to save and close the shell script we need to press the following shortcuts and keys sequentially:
+Ctrl+X
+Y
+Enter
+i) Now you will be returned back to the terminal.
+j) Now type the following commands: -> chmod +x infil.sh (Used to give the execute permission for the infil.sh file)  ->./infil.sh(Used to execute the infil.sh script)
+k) Now the script will start running infinitely!
+l) DO NOT CLOSE THE TERMINAL. Keep it minimized.
+45. For Instance-2:
+a) Click on the instance 2.
+b) Now click on the connect button 
+ 
+c) Click on connect again
+d) After the terminal gets opened we again follow the same steps as we did for instance-2
+e) Enter the command:  nano infil.sh
+f) After the command a new nano Editor window will open. Type the following in it.
+#!/bin/bash
+while true
+do 
+       echo “Loop running”
+done 
+g) Now, to save and close the shell script we need to press the following shortcuts and keys:
+h) Now 
+Ctrl+X
+Y
+Enter
+h)you will be returned back to the terminal.
+i) Now type the following commands:
+-> chmod +x  infil.sh (Used to give the execute permission for the infil.sh file)
+-> ./infil.sh(Used to execute the infil.sh script)
+j) Now the script will start running infinitely!
+k) DO NOT CLOSE THE TERMINAL TAB. Go back to the previous tab to keep working in AWS.46. Now go to the instances page.47. Select both the instances.
+48. Click on the instances white bar at the bottom of the page.
+49. Now drag the two bars to expand the view.
+50. We are interested only in the CPU utilization graph. Click on the maximize icon by hovering over the graph as shown in the fig to maximize this graph.
+ 
+51. Our 1st instance has already crossed over 50% utilization. That’s why we can see already a new third instance has been initiated by our auto-scaling group to compensate for the overload.
+ 
+52. There can only be 3 servers running at a time for us as specified in our Auto-Scaling group when we were creating it. Hence, we have reached our maximum limit of instances running concurrently. 
+Hence, our Auto-Scaling Group can handle instance overloading by providing new instances to handle the overloading.Note that our project webpage was not at all disconnected because of this.
+Problem Statement:
+Build scaling plans in AWS that balance load on efficient EC2 instances.
+Procedure:
+1.	Sign in to GitHub. Ensure the repository to be cloned is public.
+a) Go to the "Settings" tab of your repository.
+b) Scroll down to the "Danger Zone" section.
+c) Check "Change Repository Visibility". If it is Private, change it to Public by following the instructions. 
+2.	Open AWS in another tab and sign in to your console. 
+3.	Go to the EC2 dashboard. 
+4.	From the left navigation bar, go to "Instances" → Click "Launch Templates". 
+5.	Click on "Create Launch Template". 
+6.	Enter a name and description for the template.
+Check the "Provide Guidance" option. 
+7.	Under Quick Start, select Ubuntu as the OS. 
+8.	Under Instance Type, select t2.micro. 
+9.	Select an existing Key Pair and Security Group, or create new ones if required. 
+10.	Scroll to the Advanced Details section.
+In the User Data field, paste the required deployment script. 
+11.	Click on "Create Launch Template". 
+12.	From the left navigation bar, go to "Auto Scaling Groups". 
+13.	Click on "Create Auto Scaling Group". 
+14.	Enter a unique name and select the Launch Template created earlier. 
+15.	Select "Latest Version" under template version. 
+16.	Click "Next". 
+17.	Under Availability Zones and Subnets, select all available zones. 
+18.	Click "Next". 
+19.	Under Load Balancer, select "Attach to a new load balancer". 
+20.	Choose "Internet-facing". 
+21.	Under Listeners and Routing: 
+o	Enter the project port (e.g., 4000) 
+o	Create a new target group and give it a name 
+22.	Click "Next". 
+23.	Configure Group Size:
+a) Desired Capacity = 2
+b) Minimum Capacity = 2
+c) Maximum Capacity = 3 
+24.	Under Scaling Policies: 
+o	Select "Target Tracking Scaling Policy" 
+o	Metric Type: Average CPU Utilization 
+o	Target Value: 50 
+o	Warm-up Time: 300 seconds 
+25.	Click "Next". 
+26.	Skip Notifications and click "Next". 
+27.	Skip Tags and click "Next". 
+28.	Review settings and click "Create Auto Scaling Group". 
+29.	Go to Auto Scaling Groups and verify creation. 
+30.	Go back to Instances from the left navigation bar. 
+31.	Select the first instance and copy its Public IPv4 DNS. 
+32.	Paste it into a browser to access the webpage. 
+33.	Append the port number to access the project:
+http://Public-IP:4000 
+34.	To test Auto Scaling, simulate failure or overload. 
+35.	To crash servers, terminate instances. 
+36.	Go to Instances page and select instances. 
+37.	Click "Instance State" → "Terminate Instance". 
+38.	Refresh the page until instances are terminated. 
+39.	Wait and refresh; new instances will automatically launch. 
+40.	Apply filter: "Instance State = running" to view active instances. 
+41.	Copy new Public IPv4 DNS and verify the application is running. 
+42.	To test overload, increase CPU usage. 
+43.	Use:
+a) Bitvise SSH Client for Instance 1
+b) AWS browser terminal for Instance 2 
+44.	For Instance 1:
+a) Connect using SSH
+b) Open terminal
+c) Run: nano infil.sh
+d) Enter script:
+#!/bin/bash
+while true
+do
+echo "Loop running"
+done
+e) Save using: Ctrl+X → Y → Enter
+f) Run commands:
+chmod +x infil.sh
+./infil.sh
+45.	For Instance 2:
+Repeat the same steps using AWS Connect terminal. 
+46.	Go to Instances page. 
+47.	Select both instances. 
+48.	Expand monitoring panel. 
+49.	View CPU Utilization graph. 
+50.	When CPU exceeds 50%, a new instance is automatically launched. 
+51.	Maximum 3 instances will run as configured. 
+52.	The Auto Scaling Group successfully handles crashes and overload without downtime.
+

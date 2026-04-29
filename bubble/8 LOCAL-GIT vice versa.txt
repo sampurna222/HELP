@@ -1,0 +1,57 @@
+========================================
+GitHub Upload (Push Project)
+========================================
+
+create token setteings-->developer setteings-->classic token
+
+
+1. Go to your project folder:
+   cd "C:/Users/HP/Downloads/aws cloud/aws_pro"
+
+2. Initialize Git:
+   git init
+
+3. Configure Git (only once):
+   git config --global user.name "sampurna222"
+   git config --global user.email "sampurnachakrabarty873@gmail.com"
+
+4. Add files:
+   git add .
+
+5. Commit:
+   git commit -m "Initial commit"
+
+6. Connect to GitHub repo:
+   git remote add origin https://github.com/sampurna222/topbottom.git
+
+7. If error (remote exists):
+   git remote set-url origin https://github.com/sampurna222/topbottom.git
+
+8. Set branch:
+   git branch -M main
+
+9. Pull first (important):
+   git pull origin main --allow-unrelated-histories
+
+10. Push to GitHub:cd
+    git push -u origin main
+
+
+========================================
+GitHub Clone (Download Project)
+========================================
+
+1. Go to directory:
+   cd /c/Users/HP/Downloads
+
+2. Clone repository:
+   git clone https://github.com/sampurna222/topbottom.git
+
+3. Open folder:
+   cd topbottom
+
+4. Check files:
+   ls
+
+5. Check status (optional):
+   git status

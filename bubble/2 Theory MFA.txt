@@ -1,0 +1,11 @@
+1.	Sign-in to your AWS console. Then select the down arrow beside your account name in the top right side of the page.
+2.	Now select Security Credentials option in the drop-down menu.
+3.	Now after arriving in My Security Credentials page, now scroll down to Multi-Factor Authentication (MFA) section. Click on the Assign MFA device button.  
+4.	Next Assign a unique device name (very important and needs to be unique). This name is actually the name of the account that shows up in your authenticator app with the security codes and hence is essential for identification later. Select Authenticator app in Select MFA device section.
+5.	After that you have to make sure you download an authenticator app from app store in your android/iOS device. Google/Microsoft authenticator is preferred. After installation, click on the Show QR code box here in the website. Scan the QR code with your authenticator app. Your device name given will show up in your authenticator main page. 
+6.	We will see a certain unique combination appearing against our given device name for our AWS account and stays only for 30-60 seconds. Enter 2 consecutive codes appearing in the given box in the website to authenticate your MFA.
+7.	After successfully verifying your MFA, click on the Add MFA button.
+8.	You will be redirected to the security credentials page and see your newly added MFA method with your given device name for your account.
+9.	Hence, we have successfully added an MFA device. 
+10.	Now sign-out and try to re-login to the console.
+11.	Now after providing user email and password, from now on you have to enter the MFA code which is given by the authenticator app in your phone. Be mindful that the code changes every 30-60 seconds and we have to enter the current or existing one which has not expired (or in this case stopped showing

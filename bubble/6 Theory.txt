@@ -1,0 +1,20 @@
+1.	Sign in to your AWS account as a root user.
+2.	Then create a public S3 bucket. (Refer to Assignment 5 for full procedure)
+3.	Now create three html files anywhere in your computer (preferably in a folder in the Desktop). 
+a.	The first one is named index page.html
+b. The second one is named page1.html 
+c. The third one is named page2.html 
+4.	 Now let us go back to AWS. Select the newly created public bucket.
+5.	Click the upload button
+6.	Next click on the add files button. Select all the three html files and upload them by pressing the upload button.
+7.	Now, after closing the upload status page after all files are updated, select all the files shown in the object table in the public bucket.
+8.	Click on the actions button and from the subsequent dropdown menu select Make public using ACL.
+9.	Click on Make public button to make all the selected files public
+10.	Now, we after making public we close the status page and we are redirected to our public bucket page. Now we select the properties tab of the bucket which is located in the right side of the objects tab .
+11.	After arriving in the properties tab. Scroll down all the way to the bottom. We will focus only on the Static website hosting section. By default, it will show disabled. We have to enable it. In order to do so click on the Edit button on the righthand side of the section.
+12.	Now we will choose the enable option. After choosing it multiple options will appear. Just follow the snapshot provided below and make the same changes.
+13.	Next scroll down. Now we have to mention the html document our link will show. This is the one which anyone can access using the bucket link.
+14.	Next scroll down and click on save changes button
+15.	Now, you will again arrive in the bucket’s properties tab. Scroll down to the static website hosting area. Now you can see a link has arrived.
+16.	Copy the link and paste it in another browser.
+17.	We are now viewing the index.html page. And as scripted, we can click on the Go to Next to arrive at the next.html page. Similarly, we can click on the Go to About page to go the About.html page.

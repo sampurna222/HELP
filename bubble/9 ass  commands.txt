@@ -1,0 +1,15 @@
+Ensure that there is a repository with files needed to host a site example: “index.js” , “package.json”.
+create a new security group with http https custom tcp and ssh
+create an instance with that security group(prev one created)
+connect the bit vise with the public ip
+open terminal
+sudo apt-get update && sudo apt-get upgrade 
+sudo apt-get install nginx 
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - 
+sudo apt install nodejs
+node -v
+ Now copy the repository URL and git clone it in the terminal: git clone https://github.com/celestial201/Aws_test.git
+cd Aws_test
+npm install
+npm -v
+node index.js
