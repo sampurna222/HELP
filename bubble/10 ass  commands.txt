@@ -2,28 +2,19 @@ use the same security group as 9 and make a instance
 with advanced settings
 #!/bin/bash
 
-apt-get update -y
-
+apt-get update
 apt-get install -y nginx
 systemctl start nginx
 systemctl enable nginx
 
 apt-get install -y git
 
-curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 apt-get install -y nodejs
 
 git clone https://github.com/sampurna222/pro3.git
-cd pro3 
-
+cd pro3
 npm install
-
-sudo apt-get update
-sudo apt-get upgrade
-
-npm install
-
-node index.js
 
 copy the public ip with 4000
  
