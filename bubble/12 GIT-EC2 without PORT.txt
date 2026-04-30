@@ -1,6 +1,9 @@
  pwd
  cd /
 pwd
+sudo apt update
+sudo apt install nginx -y
+ls /etc/nginx/
 cd /etc/nginx/sites-available/
 sudo nano default
 server_name_;
@@ -17,3 +20,33 @@ server_name_;
 }
 sudo systemctl restart nginx
 copy the ipv4 and paste on incognito
+
+
+THIS IS WHERE YOU NEED TO PASTE THE CODE BLOCK
+
+ # include snippets/snakeoil.conf;
+
+        root /var/www/html;
+
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404
+        proxy_pass http://localhost:4000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+
+        # pass PHP scripts to FastCGI server
+        #
+        #location ~ \.php$ {
+        #       include snip
