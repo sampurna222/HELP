@@ -1,0 +1,46 @@
+Sign-in to AWS console.
+2. Go to the EC2 dashboard. Now go to the instances page.
+3. Click on the create new instance button.
+4. Now create an EC2 server using the Security Group created earlier and enter the user data(Refer to Ass10)
+
+#!/bin/bash
+
+apt-get update -y
+
+apt-get install -y nginx
+systemctl start nginx
+systemctl enable nginx
+
+apt-get install -y git
+
+curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+apt-get install -y nodejs
+
+git clone https://github.com/sampurna222/pro3.git
+cd pro3 || exit
+
+npm install
+
+. Create the instance and click on the instance after creation.
+6. Copy the public IPv4 address and paste it in another browse. The nginx homepage will show up.bash
+Our server is working perfectly. Note, in previous assignments we used to connect to our project webpages using port no. However, in this exercise we are going to access our project webpage without using any port no.
+7. Copy the Public IPv4 address of the server instance and use this to connect it to the server using Bitvise SSH client. (Refer Ass7)
+8. Now open the terminal in Bitvise.
+9. Enter the following commands in it.
+-> pwd
+(To check current directory)
+-> cd /
+(To go to root folder)
+-> pwd
+-> cd /etc/nginx/sites-available/
+(To open the sites-available directory under nginx)
+-> sudo nano default
+10. After opening the default file in the nano editor, search for the location / {}. It should be after server_name_;
+11. Comment out the location block and each and every line inside the block.
+2. Now paste the following code just under the closing curly bracket.
+. Now save it by Ctrl+X and exit nano editor.
+14. You will be reverted back to the terminal. Type the following command…..
+-> sudo systemctl restart nginx
+15. Now paste the public IPv4 address in your browser. Now press Enter. Our project page will show up without entering our port no.
+We have successfully deployed a project from GitHub to EC2 without using port.
+
