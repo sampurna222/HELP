@@ -18,6 +18,9 @@ cd pro3 || exit
 
 npm install
 
+sudo apt-get update
+sudo apt-get upgrade
+
 npm install
 
 node index.js
